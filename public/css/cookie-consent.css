@@ -1,0 +1,275 @@
+/* Styles for the light mode banner */
+.light-mode-banner {
+    background-color: #ffffff;
+    color: #212529;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General styles for light mode buttons */
+.light-mode-button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    color: white;
+}
+
+/* Styles specifically for the "Accept All" button in light mode */
+.light-mode-button.button-success {
+    background-color: #198754; /* Bootstrap btn-success background */
+    border-color: #198754; /* Match border color */
+}
+
+.light-mode-button.button-success:hover {
+    background-color: #157347; /* Bootstrap btn-success hover */
+    border-color: #146c43; /* Slightly darker for hover */
+}
+
+/* Styles specifically for the "Reject All" button in light mode */
+.light-mode-button.button-secondary {
+    background-color: #6c757d; /* Bootstrap btn-secondary background */
+    border-color: #6c757d; /* Match border color */
+}
+
+.light-mode-button.button-secondary:hover {
+    background-color: #5c636a; /* Bootstrap btn-secondary hover */
+    border-color: #565e64; /* Slightly darker for hover */
+}
+
+/* Styles specifically for the "Primary" button in light mode */
+.light-mode-button.button-primary {
+    background-color: #0d6efd; /* Bootstrap btn-primary background */
+    border-color: #0d6efd; /* Match border color */
+}
+
+.light-mode-button.button-primary:hover {
+    background-color: #0b5ed7; /* Bootstrap btn-primary hover */
+    border-color: #0a58ca; /* Slightly darker for hover */
+}
+
+/* Styles for the dark mode banner */
+.dark-mode-banner {
+    background-color: #212529;
+    color: #ffffff;
+    box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* General styles for dark mode buttons */
+.dark-mode-button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    color: white;
+}
+
+/* Styles specifically for the "Accept All" button in dark mode */
+.dark-mode-button.button-success {
+    background-color: #198754; /* Bootstrap btn-success background */
+    border-color: #198754; /* Match border color */
+}
+
+.dark-mode-button.button-success:hover {
+    background-color: #157347; /* Bootstrap btn-success hover */
+    border-color: #146c43; /* Slightly darker for hover */
+}
+
+/* Styles specifically for the "Reject All" button in dark mode */
+.dark-mode-button.button-secondary {
+    background-color: #6c757d; /* Bootstrap btn-secondary background */
+    border-color: #6c757d; /* Match border color */
+}
+
+.dark-mode-button.button-secondary:hover {
+    background-color: #5c636a; /* Bootstrap btn-secondary hover */
+    border-color: #565e64; /* Slightly darker for hover */
+}
+
+/* Styles specifically for the "Primary" button in dark mode */
+.dark-mode-button.button-primary {
+    background-color: #0d6efd; /* Bootstrap btn-primary background */
+    border-color: #0d6efd; /* Match border color */
+}
+
+.dark-mode-button.button-primary:hover {
+    background-color: #0b5ed7; /* Bootstrap btn-primary hover */
+    border-color: #0a58ca; /* Slightly darker for hover */
+}
+
+/* General styles for the cookie consent banner and configurator */
+#ev-cookie-consent-banner,
+#ev-cookie-configurator {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    padding: 15px 30px;
+    text-align: left;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Title styles for the banner and configurator */
+#ev-cookie-consent-banner h4,
+#ev-cookie-configurator h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Paragraph styles for the banner and configurator */
+#ev-cookie-consent-banner p,
+#ev-cookie-configurator p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Styles for the container of consent buttons */
+#ev-cookie-consent-buttons {
+    display: flex; /* Align buttons in a row */
+    justify-content: flex-start; /* Align buttons to the start of the row */
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Space above the buttons */
+    width: 100%; /* Full width of container */
+}
+
+/* General button styles in the banner and configurator */
+#ev-cookie-consent-banner button,
+#ev-cookie-configurator button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+/* Styles for the form inside the configurator */
+#ev-cookie-configurator form {
+    text-align: left;
+    width: 100%; /* Full width of the form */
+}
+
+/* Styles for the labels inside the configurator */
+#ev-cookie-configurator label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.4; /* Line spacing for readability */
+    padding: 3px 0;
+    cursor: pointer;
+    color: inherit; /* Inherit text color */
+}
+
+/* Styles for the span inside labels, used for category names */
+#ev-cookie-configurator label span {
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Margin for the input checkbox inside labels */
+#ev-cookie-configurator label input {
+    margin-right: 8px;
+}
+
+/* Container for the retract consent button, positioned in the bottom-left corner */
+#ev-cookie-retract-consent-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10001; /* Ensure this is above other elements */
+}
+
+/* Styles for the retract consent button */
+#ev-cookie-retract-consent {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, width 0.3s ease;
+    overflow: hidden; /* Hide overflow to manage expanding */
+    white-space: nowrap;
+    width: 40px; /* Initial width when minimized */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Ensure consistent height */
+    z-index: 10002; /* Ensure the button stays above other elements */
+}
+
+/* Initial content for the retract consent button (a plus icon) */
+#ev-cookie-retract-consent::after {
+    content: '+';
+    display: inline-block;
+    width: 16px; 
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Expands the retract consent button on hover */
+#ev-cookie-retract-consent:hover {
+    width: auto; /* Allow the button to expand to fit the text */
+    padding: 10px 20px;
+}
+
+/* Changes the content from the plus icon to full text on hover */
+#ev-cookie-retract-consent:hover::after {
+    content: attr(data-text); /* Use the data-text attribute as content */
+    display: inline;
+    width: auto;
+    height: auto;
+    margin-left: 5px;
+}
+
+/* Styles for the retract consent info */
+#ev-cookie-retract-info {
+    position: fixed;
+    bottom: 60px; /* Adjusted to show above the retract button */
+    left: 20px;
+    z-index: 10000;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: left;
+    display: none;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+/* Expands the retract consent info on hover */
+#ev-cookie-retract-consent-container:hover #ev-cookie-retract-info {
+    display: block;
+}
+
+/* General pointer style */
+.ev-pointer {
+    cursor: pointer;
+}
+
+/* Style for required fields and rejected categories */
+.ev-required, .ev-rejected {
+    color: red;
+}
+
+/* Style for accepted categories */
+.ev-accepted {
+    color: green;
+}
+
+/* Capitalize text */
+.ev-capitalize {
+    text-transform: capitalize;
+}

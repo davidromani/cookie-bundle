@@ -1,0 +1,38 @@
+services:
+    Eveltic\CookieBundle\Controller\CookieConsentController:
+        arguments:
+            $cookieConsentService: '@Eveltic\CookieBundle\Service\CookieConsentService'
+            $requestStack: '@request_stack'
+            $logger: '@logger'
+        tags: ['controller.service_arguments']
+    
+    Eveltic\CookieBundle\Service\CookieConsentService:
+        arguments:
+            $requestStack: '@request_stack'
+            $currentVersion: '%eveltic_cookie.version%'
+            $expiration: '%eveltic_cookie.expiration%'
+            $categories: '%eveltic_cookie.categories%'
+            $themeMode: '%eveltic_cookie.theme_mode%'
+            $storageService: '@Eveltic\CookieBundle\Service\CookieConsentStorageService'
+
+    Eveltic\CookieBundle\Service\CookieConsentStorageService:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+
+    Eveltic\CookieBundle\Twig\CookieConsentExtension:
+        arguments:
+            $cookieConsentService: '@Eveltic\CookieBundle\Service\CookieConsentService'
+            $twig: '@twig'
+            $packages: '@assets.packages'
+        tags: ['twig.extension']
+        
+    Eveltic\CookieBundle\Command\ArchiveCookieConsentCommand:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+            $kernel: '@kernel'
+        tags: ['console.command']
+        
+    Eveltic\CookieBundle\Command\InstallCommand:
+        arguments:
+            $kernel: '@kernel'
+        tags: ['console.command']

@@ -1,0 +1,78 @@
+{# Define the default translation domain to be used in this template #}
+{% trans_default_domain 'evCookieConsent' %}
+
+{# The main cookie consent banner, visible if the user has not yet given consent #}
+<div id="ev-cookie-consent-banner" class="light-mode-banner" style="{% if ev_cookie_show_cookie_banner() %}display: block;{% else %}display: none;{% endif %}">
+    <h4>{{ 'cookie_consent.banner_title'|trans }}</h4> {# Title of the banner, translated #}
+    <p>{{ 'cookie_consent.banner_text'|trans }}</p> {# Text of the banner, explaining the use of cookies, translated #}
+    <div id="ev-cookie-consent-buttons">
+        {# Button to accept all cookies, translated #}
+        <button id="ev-cookie-accept-all" class="light-mode-button button-success">{{ 'cookie_consent.accept_all'|trans }}</button>
+        {# Button to open the cookie configuration options, translated #}
+        <button id="ev-cookie-configure" class="light-mode-button button-secondary">{{ 'cookie_consent.configure'|trans }}</button>
+        {# Button to reject all cookies, translated #}
+        <button id="ev-cookie-reject-all" class="light-mode-button button-secondary">{{ 'cookie_consent.reject_all'|trans }}</button>
+    </div>
+</div>
+
+{# The cookie configuration panel, initially hidden #}
+<div id="ev-cookie-configurator" class="light-mode-banner" style="display: none;">
+    <h4>{{ 'cookie_consent.configure'|trans }}</h4> {# Title of the configuration panel, translated #}
+    <form id="ev-cookie-consent-form">
+        {# Loop through each cookie category #}
+        {% for category in categories %}
+        <label class="{% if not category.required %}ev-pointer{% endif %}">
+            {# Checkbox for each category, with certain categories being required and non-clickable #}
+            <input type="checkbox" name="{{ category.name }}" value="1" {% if category.required %} checked onclick="return false" {% endif %}>
+            {# Display a required marker for mandatory categories #}
+            {% if category.required %}<span class="ev-required">*</span>{% endif %}
+            {# Display the category name, translated and capitalized #}
+            <span class="ev-capitalize">{{ ('cookie_consent.' ~ category.name)|trans }}</span>
+            <br>
+            {# Display the description of the category, translated #}
+            <small>{{ ('cookie_consent.' ~ category.name ~ '_description')|trans }}</small>
+        </label>
+        {% endfor %}
+        {# Button to save the cookie preferences, translated #}
+        <button type="button" id="ev-cookie-save-consent" class="light-mode-button button-success">{{ 'cookie_consent.save_preferences'|trans }}</button>
+        {# Button to go back to the main banner, translated #}
+        <button type="button" id="ev-cookie-back" class="light-mode-button button-secondary">{{ 'cookie_consent.back'|trans }}</button>
+    </form>
+</div>
+
+{# The retract consent button, visible if the user has already given consent #}
+<div id="ev-cookie-retract-consent-container" style="{% if ev_cookie_show_cookie_banner() %}display: none;{% else %}display: block;{% endif %}">
+    <button id="ev-cookie-retract-consent" class="light-mode-button button-secondary">{{ 'cookie_consent.retract'|trans }}</button> {# Button to retract cookie consent, translated #}
+</div>
+{# The cookie consent info, visible if the user has already given consent #}
+<div id="ev-cookie-retract-info" class="light-mode-banner" style="display: none;">
+    <h3>{{ 'cookie_consent.consent_data_title'|trans }}</h3>
+    <p class="ev-capitalize"><strong>{{'cookie_consent.datetime'|trans}}:</strong> <span id="ev-consent-datetime">{{ consentDateTime }}</span></p>
+    <p class="ev-capitalize"><strong>{{'cookie_consent.expiration'|trans}}:</strong> <span id="ev-consent-expiration">{{ consentExpiration }}</span></p>
+    <p class="ev-capitalize"><strong>{{'cookie_consent.uuid'|trans}}:</strong> <span id="ev-consent-uuid">{{ consentUuid }}</span></p>
+    <p class="ev-capitalize"><strong>{{'cookie_consent.version'|trans}}:</strong> <span id="ev-consent-version">{{ consentVersion }}</span></p>
+    <p class="ev-capitalize"><strong>{{'cookie_consent.accepted_categories'|trans}}:</strong></p>
+    <ul id="ev-consent-categories-ul">
+        {% for category, accepted in consentCategories %}
+            <li>
+                <span class="ev-capitalize">{{ ('cookie_consent.' ~ category)|trans }}</span>: 
+                <span id="ev-consent-categories-list-{{ category }}">
+                    {{ accepted ? ('<span class="ev-accepted">' ~ 'cookie_consent.accepted'|trans ~ '</span>')|raw : ('<span class="ev-rejected">' ~ 'cookie_consent.rejected'|trans ~ '</span>')|raw }}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{# JavaScript variables for theme mode and AJAX URLs #}
+<script>
+    var categoryNames = {};
+    {% for category in categories %}
+        categoryNames["category_name_{{ category.name }}"] = "{{ ('cookie_consent.' ~ category.name)|trans }}"; {# Translated field #}
+    {% endfor %}
+    var category_accepted = "{{ 'cookie_consent.accepted'|trans }}"; {# Translated field #}
+    var category_rejected = "{{ 'cookie_consent.rejected'|trans }}"; {# Translated field #}
+    var themeMode = "{{ theme_mode }}"; {# The current theme mode (light, dark, or auto) #}
+    var cookieConsentUrl = "{{ path('cookie_consent') }}"; {# The URL for submitting cookie consent #}
+    var retractConsentUrl = "{{ path('retract_consent') }}"; {# The URL for retracting cookie consent #}
+</script>
