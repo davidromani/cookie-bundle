@@ -55,6 +55,9 @@ php bin/console doctrine:migrations:migrate
 {{ ev_cookie_include_assets() }}
 {{ ev_cookie_render() }}
 ````
+## Uninstall
+Since there is no flex recipe, when uninstalling this bundle you need to manually remove the config files that were installed with the installation command. If you uninstall the bundle and doesn't remove those files the app will throw and exception telling you about this problem.
+
 ## Configuration
 If you ran the installation command all configuration files were in their corresponding folder.
 If you dont ran the command and you want to configure these are the files you need:
