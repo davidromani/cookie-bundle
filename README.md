@@ -89,7 +89,9 @@ eveltic_cookie:
 
 Renders the cookie consent banner. This function generates the HTML content for displaying the cookie consent dialog based on the user's current preferences.
 This function should be included in a layout or template where you want the cookie consent banner to appear.
+This function support both string and array inputs. If you provide an array input both conditions must be true to return true.
 > {{ ev_cookie_is_category_accepted('analytics') }}
+> >ev_cookie_is_category_accepted(['technical', 'analytics']))
 
 Checks if a specific cookie category (e.g., "technical", "analytics") is accepted by the user.
 This function is useful for conditionally loading scripts or other assets based on the user's consent for specific categories.
