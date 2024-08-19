@@ -50,6 +50,11 @@ or if you are using migrations:
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 ```
+4. Add the functions to your template (View Usage section)
+```twig
+{{ ev_cookie_include_assets() }}
+{{ ev_cookie_render() }}
+````
 ## Configuration
 If you ran the installation command all configuration files were in their corresponding folder.
 If you dont ran the command and you want to configure these are the files you need:
