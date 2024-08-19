@@ -1,5 +1,10 @@
 # Eveltic Cookie Bundle
-The Eveltic Cookie Consent Bundle is a Symfony package designed to help developers implement and manage user cookie consent on their websites, ensuring full compliance with the latest 2024 AEPD (Spanish Data Protection Agency) regulations. This bundle provides an easy-to-use interface for configuring, collecting, and storing user consent preferences, with customizable options for different types of cookies (technical, analytics, preferences, and advertisement). The package includes ready-to-use templates, supports multiple languages, and seamlessly integrates with Symfony applications, making it easier to align your website with legal requirements.
+The Eveltic Cookie Consent Bundle is a Symfony package to implement and manage user cookie consents on websites, thus complying fully with the newest 2024 AEPD regulations. 
+It provides an easy-to-use interface to configure, collect, and store the preferences of user consent. 
+
+Different types of cookie settings can be configured for technical, analytical, preference, and advertisement cookies. It features easy-to-use templates, multilingual support, and is easy to implement in Symfony applications to ensure that your website is within the bounds of the law.
+
+All operations are managed through ajax requests without the need of any refresh.
 
 ## Images
 ### Banner
