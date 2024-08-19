@@ -38,7 +38,7 @@ composer require eveltic/cookie-bundle
 2. Run install command
 This command will create the necesary files in order to be able to adequate to your configuration needs.
 ```bash
-php bin/console ev:cookies:install
+php bin/console ev:cookie:install
 ```
 3. Update the database
 If you force update the database:
