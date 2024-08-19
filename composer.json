@@ -1,6 +1,7 @@
 {
     "name": "eveltic/cookie-bundle",
     "description": "A Symfony bundle for managing cookie consent under the AEPD 2024",
+    "keywords": ["symfony","bundle","symbony-bundle","cookie","consent","aepd"],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
