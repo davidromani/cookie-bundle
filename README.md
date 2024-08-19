@@ -27,6 +27,7 @@ All operations are managed through ajax requests without the need of any refresh
 - Integration with Doctrine ORM.
 - Fully featured twig display.
 - Twig and backend functions to check if consent is accepted.
+- Cookie versioning to force the user to reconsent.
 
 ## Installation
 1. Require the Bundle via Composer:
