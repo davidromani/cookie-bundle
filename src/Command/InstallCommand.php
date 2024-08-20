@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class InstallCommand extends Command
 {
     private $installFiles = [
-        '/vendor/eveltic/cookie-bundle/config/eveltic_cookie.yaml' => '/config/packages/eveltic_cookie.yaml',
+        '/vendor/eveltic/cookie-bundle/config/packages/eveltic_cookie.yaml' => '/config/packages/eveltic_cookie.yaml',
         '/vendor/eveltic/cookie-bundle/config/routes/eveltic_cookie.yaml' => '/config/routes/eveltic_cookie.yaml',
     ];
 
