@@ -1,14 +1,10 @@
-eveltic_cookie: 
+eveltic_cookie:
     categories:
-      - name: "technical"
-        required: true
-      - name: "preferences"
-        required: false
-      - name: "analytics"
-        required: false
-      - name: "ads"
-        required: false
+        - {name: technical, required: true}
+        - {name: preferences, required: false}
+        - {name: analytics, required: false}
+        - {name: ads, required: false}
     domain: null
     expiration: "+2 years"
     version: 1
-    theme_mode: auto # 'light', 'dark', 'auto'
+    theme_mode: auto
