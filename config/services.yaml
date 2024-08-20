@@ -17,7 +17,7 @@ services:
 
     Eveltic\CookieBundle\Service\CookieConsentStorageService:
         arguments:
-            $entityManager: '@doctrine.orm.default_entity_manager '
+            $entityManager: '@doctrine.orm.entity_manager'
 
     Eveltic\CookieBundle\Twig\CookieConsentExtension:
         arguments:
