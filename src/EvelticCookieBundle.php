@@ -74,7 +74,7 @@ class EvelticCookieBundle extends AbstractBundle
      */
     public function prependExtension(ContainerConfigurator $containerConfigurator, ContainerBuilder $containerBuilder): void
     {
-        $containerConfigurator->import(sprintf('%s/config/%s', $this->getRootPath(), 'eveltic_cookie.yaml'));
+        $containerConfigurator->import(sprintf('%s/config/packages/%s', $this->getRootPath(), 'eveltic_cookie.yaml'));
     }
     
     /**
